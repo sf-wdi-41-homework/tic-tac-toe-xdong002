@@ -11,6 +11,9 @@ $(document).ready(function() {
     if (played.hasClass('p1') || played.hasClass('p2'))  {
       alert ("already played!");
     }
+    else if (checkWon('p1') || checkWon('p2')) {
+      alert('You already Won!')
+    }
     else {
       if (playerTurn ===1) {
           played.append('<img src= "d1.png">');
@@ -72,9 +75,4 @@ $(document).ready(function() {
         return false;
       }
     }
-
-
-
-
-
 });
