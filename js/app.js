@@ -3,7 +3,6 @@ $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
   var playerTurn = 1;
-  var gameEnd = 1;
 
   $('.box').on('click',function(){
 
