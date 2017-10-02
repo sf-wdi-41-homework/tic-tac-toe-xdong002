@@ -1,21 +1,85 @@
+body {
+  background-image: url('../background.jpg');
+  background-size: cover;
+}
+
+hr {
+  display: block;
+  border-top: 1px solid green;
+}
+
 #board {
   margin-top: 10px;
 }
 
 .box {
-  border: 1px solid black;
+  border: 1px solid rgba(0,0,0,0.7);
   height: 150px;
   padding: 0px;
+}
 
+#a1 {
+  border-top: none;
+  border-left: none;
+}
+
+#a2 {
+  border-top: none;
+}
+
+#a3 {
+  border-top: none;
+  border-right: none;
+}
+
+#a4 {
+  border-left: none;
+}
+
+#a6 {
+  border-right: none;
+}
+
+#a7 {
+  border-left: none;
+  border-bottom: none;
+}
+
+#a8 {
+  border-bottom: none;
+}
+
+#a9 {
+  border-right: none;
+  border-bottom: none;
 }
 
 #headerimg {
   height: 150px;
 }
 
-.d1, .d2 {
-  height: 80%;
-  width: 80%;
-  margin: 10% auto;
+.p1 img {
+  height: 50%;
+  width: 50%;
+  margin: 20% auto;
   display: block;
+}
+
+.p2 img {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.reset {
+  margin: 20px auto;
+  display: block;
+  height: 30px;
+  width: 100px;
+  border-color: white;
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  font-style: italic;
 }

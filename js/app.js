@@ -2,25 +2,80 @@
 $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
-  var switchTurn = 1;
+  var playerTurn = 1;
   var gameEnd = 1;
 
-  function playerPlay(player) {
-  $('.box').one('click',function(player){
-    $(this).append('<img class = "player" src="player.jpg">');
-    })
-  };
+  $('.box').on('click',function(){
 
-  if (switchTurn === 1) {
-    playerPlay(d1);
-    switchTurn = 2;
-  }
-  if (switchTurn === 2) {
-    playerPlay(d2);
-    switchTurn = 1;
-  }
+    var played = $(this);
+
+    if (played.hasClass('p1') || played.hasClass('p2'))  {
+      alert ("already played!");
+    }
+    else {
+      if (playerTurn ===1) {
+          played.append('<img src= "d1.png">');
+          played.addClass('p1');
+          if (checkWon('p1')) {
+            alert('You Won!');
+          }
+
+          else {
+            playerTurn = 2;
+          }
+      }
+      else {
+        played.append('<img src= "d2.png">');
+        played.addClass('p2');
+        if (checkWon('p2')) {
+          alert('You Won!');
+        }
+        else {
+          playerTurn = 1;
+        }
+      }
+    }
+  });
+
+    function checkWon(player) {
+      if ($('#a1').hasClass(player) && $('#a2').hasClass(player) && $('#a3').hasClass(player)) {
+        return true;
+      }
+
+      else if ($('#a4').hasClass(player) && $('#a5').hasClass(player) && $('#a6').hasClass(player)) {
+        return true;
+      }
+
+      else if ($('#a7').hasClass(player) && $('#a8').hasClass(player) && $('#a9').hasClass(player)) {
+        return true;
+      }
+
+      else if ($('#a1').hasClass(player) && $('#a4').hasClass(player) && $('#a7').hasClass(player)) {
+        return true;
+      }
+
+      else if ($('#a2').hasClass(player) && $('#a5').hasClass(player) && $('#a8').hasClass(player)) {
+        return true;
+      }
+
+      else if ($('#a3').hasClass(player) && $('#a6').hasClass(player) && $('#a9').hasClass(player)) {
+        return true;
+      }
+
+      else if ($('#a1').hasClass(player) && $('#a5').hasClass(player) && $('#a9').hasClass(player)) {
+        return true;
+      }
+
+      else if ($('#a3').hasClass(player) && $('#a5').hasClass(player) && $('#a7').hasClass(player)) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
 
 
- console.log(switchTurn);
+
+
 
 });
