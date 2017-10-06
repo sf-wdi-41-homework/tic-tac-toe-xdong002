@@ -82,4 +82,18 @@ hr {
   color: black;
   font-weight: bold;
   font-style: italic;
+  float:right;
+}
+
+.ai {
+  margin: 20px auto;
+  display: block;
+  height: 30px;
+  width: 100px;
+  border-color: white;
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+  float:left;
 }

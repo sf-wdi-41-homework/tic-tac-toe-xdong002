@@ -4,15 +4,22 @@ $(document).ready(function() {
   // goes inside this function
   var playerTurn = 1;
 
+  $('.reset').on('click',function(){
+    $('.box').html('');
+    $('.box').removeClass('p1');
+    $('.box').removeClass('p2');
+  })
+
+
   $('.box').on('click',function(){
 
     var played = $(this);
 
-    if (played.hasClass('p1') || played.hasClass('p2'))  {
-      alert ("already played!");
-    }
-    else if (checkWon('p1') || checkWon('p2')) {
+    if (checkWon('p1') || checkWon('p2')) {
       alert('You already Won!')
+    }
+    else if (played.hasClass('p1') || played.hasClass('p2'))  {
+      alert ("already played!");
     }
     else {
       if (playerTurn ===1) {
